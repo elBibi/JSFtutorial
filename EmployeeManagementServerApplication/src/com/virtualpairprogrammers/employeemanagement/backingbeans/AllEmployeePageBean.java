@@ -29,6 +29,7 @@ public class AllEmployeePageBean {
 		this.selectedEmployee = (Employee)dataTable.getRowData();
 		//forward to the Detail page
 		return "employeeDetail";
+		
 	}
 
 	public UIData getDataTable() {
