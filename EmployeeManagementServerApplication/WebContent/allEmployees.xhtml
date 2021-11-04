@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core">
+		
+<h:body>
+	<h:form>
+	<!-- Call AllEmployeePageBean.getAllEmployees -->
+	<h:dataTable value="#{allEmployeePageBean.allEmployees}"  
+	var="employee" binding="#{allEmployeePageBean.dataTable}">
+		<h:column>
+			<f:facet name="header">First Name</f:facet>
+			<f:facet name="footer">First Name</f:facet>
+			<h:commandLink action="#{allEmployeePageBean.showEmployee}">
+				#{employee.firstName}
+			</h:commandLink>
+		</h:column>
+		
+		<h:column>
+				<f:facet name="header">Surname</f:facet>
+				<f:facet name="footer">Surname</f:facet>
+			#{employee.surname}
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Job role</f:facet>
+			<f:facet name="footer">Job role</f:facet>
+			#{employee.jobRole}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Salary</f:facet>		
+			<f:facet name="footer">Salary</f:facet>
+			#{employee.salary}</h:column>
+	</h:dataTable>
+	</h:form>
+
+
+
+
+
+</h:body>
+</html>
+
