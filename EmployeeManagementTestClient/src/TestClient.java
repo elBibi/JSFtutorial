@@ -23,7 +23,7 @@ public class TestClient {
 		
 		List<Employee> employees = service.getAllEmployees();
 		
-		employees.forEach(employee -> System.out.println(employee + " " + employee.getId()));
+		employees.forEach(employee -> System.out.println(employee + " " + employee.getId()+" "+employee.getSalary()));
 	
 	}
 
