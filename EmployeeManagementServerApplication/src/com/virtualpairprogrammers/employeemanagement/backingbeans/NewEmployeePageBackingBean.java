@@ -20,12 +20,12 @@ public class NewEmployeePageBackingBean {
 	private EmployeeManagementServiceLocal service; 
 	
 	public String createEmployee() {
-		
+		// redirect to employeeDetail2 page instead of all employee
 		Employee newEmployee = new Employee(firstName, surname, jobRole, salary); 
 		
 		try {
 			service.registerEmployee(newEmployee);
-			return "allEmployees?faces-redirect=true";
+			return "employeeDetail2.jsf?employeeId="+ newEmployee.getId()+"&faces-redirect=true";
 		} catch (ServiceUnavailableException e) {
 			return "employeeNotCreated";
 		}
