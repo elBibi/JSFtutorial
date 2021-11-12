@@ -25,7 +25,7 @@ public class NewEmployeePageBackingBean {
 		
 		try {
 			service.registerEmployee(newEmployee);
-			return "allEmployees";
+			return "allEmployees?faces-redirect=true";
 		} catch (ServiceUnavailableException e) {
 			return "employeeNotCreated";
 		}
