@@ -18,7 +18,10 @@
 		<h:column>
 				<f:facet name="header">Surname</f:facet>
 				<f:facet name="footer">Surname</f:facet>
-			#{employee.surname}
+				<h:outputLink value="employeeDetail2.jsf">
+					<f:param name="employeeId" value="#{employee.id}" />
+					#{employee.surname}
+				</h:outputLink>
 		</h:column>
 
 		<h:column>
@@ -31,6 +34,17 @@
 			<f:facet name="header">Salary</f:facet>		
 			<f:facet name="footer">Salary</f:facet>
 			#{employee.salary}</h:column>
+
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+			<f:facet name="footer">ID</f:facet>
+			#{employee.id}
+		</h:column>
+
+
+
+
+
 	</h:dataTable>
 	</h:form>
 
