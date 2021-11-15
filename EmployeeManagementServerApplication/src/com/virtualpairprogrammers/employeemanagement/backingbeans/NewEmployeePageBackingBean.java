@@ -22,7 +22,7 @@ public class NewEmployeePageBackingBean {
 	public String createEmployee() {
 		// redirect to employeeDetail2 page instead of all employee
 		Employee newEmployee = new Employee(firstName, surname, jobRole, salary); 
-		
+		System.out.println("New Emp---->"+newEmployee.getFirstName());
 		try {
 			service.registerEmployee(newEmployee);
 			return "employeeDetail2.jsf?employeeId="+ newEmployee.getId()+"&faces-redirect=true";
@@ -30,7 +30,6 @@ public class NewEmployeePageBackingBean {
 			return "employeeNotCreated";
 		}
 	}
-	
 	
 	
 	

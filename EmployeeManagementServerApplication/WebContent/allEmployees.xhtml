@@ -1,51 +1,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 		xmlns:h="http://java.sun.com/jsf/html"
-		xmlns:f="http://java.sun.com/jsf/core">
-		
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>		
 <h:body>
+	<p>All Employee</p>
 	<h:form>
 	<!-- Call AllEmployeePageBean.getAllEmployees -->
-	<h:dataTable value="#{allEmployeePageBean.allEmployees}"  
+	<p:dataTable value="#{allEmployeePageBean.allEmployees}"  
 	var="employee" binding="#{allEmployeePageBean.dataTable}">
-		<h:column>
-			<f:facet name="header">First Name</f:facet>
-			<f:facet name="footer">First Name</f:facet>
+		<p:column headerText="First Name" sortBy="#{employee.firstName}" filterBy="#{employee.firstName}">
 			<h:commandLink action="#{allEmployeePageBean.showEmployee}">
 				#{employee.firstName}
 			</h:commandLink>
-		</h:column>
+		</p:column>
 		
-		<h:column>
-				<f:facet name="header">Surname</f:facet>
-				<f:facet name="footer">Surname</f:facet>
+		<p:column headerText="Surname" sortBy="#{employee.surname}" filterBy="#{employee.surname}">
 				<h:outputLink value="employeeDetail2.jsf">
 					<f:param name="employeeId" value="#{employee.id}" />
 					#{employee.surname}
 				</h:outputLink>
-		</h:column>
+		</p:column>
 
-		<h:column>
-			<f:facet name="header">Job role</f:facet>
-			<f:facet name="footer">Job role</f:facet>
+		<p:column headerText="Job Role" sortBy="#{employee.jobRole}" filterBy="#{employee.jobRole}">
 			#{employee.jobRole}
-		</h:column>
+		</p:column>
 		
-		<h:column>
-			<f:facet name="header">Salary</f:facet>		
-			<f:facet name="footer">Salary</f:facet>
-			#{employee.salary}</h:column>
+		<p:column headerText="Salaray" sortBy="#{employee.salary}" filterBy="#{employee.salary}">
+			#{employee.salary}
+		</p:column>
 
-		<h:column>
-			<f:facet name="header">ID</f:facet>
-			<f:facet name="footer">ID</f:facet>
+		<p:column headerText="ID" sortBy="#{employee.id}" filterBy="#{employee.id}">
 			#{employee.id}
-		</h:column>
+		</p:column>
 
 
 
 
 
-	</h:dataTable>
+	</p:dataTable>
 	</h:form>
 
 

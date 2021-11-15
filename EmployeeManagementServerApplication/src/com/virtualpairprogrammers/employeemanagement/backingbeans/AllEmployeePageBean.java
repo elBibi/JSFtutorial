@@ -4,7 +4,8 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.faces.component.UIData;
+
+import org.primefaces.component.api.UIData;
 
 import com.virtualpairprogrammers.employeemanagement.EmployeeManagementServiceLocal;
 import com.virtualpairprogrammers.employeemanagement.domain.Employee;
@@ -13,11 +14,16 @@ import com.virtualpairprogrammers.employeemanagement.domain.Employee;
 @ManagedBean(name="allEmployeePageBean")
 public class AllEmployeePageBean {
 
-	private UIData dataTable;
-	private Employee selectedEmployee;
 	
 	@EJB
 	private EmployeeManagementServiceLocal service;
+	private org.primefaces.component.api.UIData dataTable;
+	//private UIData dataTable;
+	private Employee selectedEmployee;
+	
+	
+	
+	
 	
 	public List<Employee> getAllEmployees(){
 			return service.getAllEmployees();
