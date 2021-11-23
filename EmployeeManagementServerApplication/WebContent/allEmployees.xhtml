@@ -2,8 +2,13 @@
 		xmlns:h="http://java.sun.com/jsf/html"
 		xmlns:f="http://java.sun.com/jsf/core"
 		xmlns:p="http://primefaces.org/ui">
-<h:head></h:head>		
+<h:head>
+	<h:outputStylesheet> library="css" name="main.css"></h:outputStylesheet>
+	<h:outputStylesheet> library="js" name="common.js"></h:outputStylesheet>
+
+</h:head>		
 <h:body>
+	<h:graphicImage value="resources/images/logo.png"></h:graphicImage>
 	<p>All Employee</p>
 	<h:form>
 	<!-- Call AllEmployeePageBean.getAllEmployees -->
@@ -27,7 +32,10 @@
 		</p:column>
 		
 		<p:column headerText="Salaray" sortBy="#{employee.salary}" filterBy="#{employee.salary}">
-			#{employee.salary}
+			<!--  This is now a component thx to h:outputText... then you can add function to the component -->
+			<h:outputText value="#{employee.salary}">
+			    <f:convertNumber type="currency"/>
+			</h:outputText>
 		</p:column>
 
 		<p:column headerText="ID" sortBy="#{employee.id}" filterBy="#{employee.id}">
